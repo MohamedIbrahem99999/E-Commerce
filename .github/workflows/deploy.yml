@@ -35,7 +35,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/exclusive-ecommerce/browser'
+          path: 'dist/exclusive-ecommerce'
 
   deploy:
     needs: build
