@@ -1,4 +1,4 @@
-/* .auth-layout {
+.auth-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -34,4 +34,4 @@
 @media (max-width: 900px) {
   .auth-layout { grid-template-columns: 1fr; }
   .auth-image { display: none; }
-} */
+}
