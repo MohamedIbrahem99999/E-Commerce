@@ -27,7 +27,7 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build Angular Application
         run: npx ng build --configuration production --base-href /E-Commerce/
@@ -35,7 +35,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist/exclusive-ecommerce'
+          path: 'dist/exclusive-ecommerce/browser'
 
   deploy:
     needs: build
