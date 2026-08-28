@@ -1,3 +1,4 @@
+```yaml
 name: Deploy Angular to GitHub Pages
 
 on:
@@ -27,8 +28,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build -- --base-href /E-Commerce/
+      - name: Build Angular
+        run: npm run build -- --configuration production --base-href /E-Commerce/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -36,8 +37,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/exclusive-ecommerce
+          path: ./dist/exclusive-ecommerce/browser
 
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+```
