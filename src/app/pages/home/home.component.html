@@ -1,0 +1,57 @@
+<!-- <section class="hero">
+  <div class="container hero-inner">
+    <aside class="category-sidebar">
+      <ul>
+        <li *ngFor="let cat of categories">{{ cat }}</li>
+      </ul>
+    </aside>
+    <div class="hero-banner">
+      <span class="brand"> iPhone 14 Series</span>
+      <h1>Up to 10% <br />off Voucher</h1>
+      <a href="#" class="shop-now">Shop Now →</a>
+    </div>
+  </div>
+</section> -->
+
+<section class="container" *ngIf="!searchTerm">
+  <div class="section-title"><span class="bar"></span><span>Today's</span></div>
+  <h2 class="section-heading">Flash Sales</h2>
+
+  <div class="grid grid-4" *ngIf="!loading; else skeleton">
+    <app-product-card *ngFor="let p of flashSales" [product]="p"></app-product-card>
+  </div>
+</section>
+
+<section class="container" *ngIf="!searchTerm">
+  <div class="section-title"><span class="bar"></span><span>This Month</span></div>
+  <h2 class="section-heading">Best Selling Products</h2>
+
+  <div class="grid grid-4" *ngIf="!loading">
+    <app-product-card *ngFor="let p of bestSelling" [product]="p"></app-product-card>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-title"><span class="bar"></span><span>{{ searchTerm ? 'Search Results' : 'Our Products' }}</span></div>
+  <h2 class="section-heading">{{ searchTerm ? 'Results for "' + searchTerm + '"' : 'Explore Our Products' }}</h2>
+
+  <p *ngIf="error" class="error">{{ error }}</p>
+
+  <div class="grid grid-4" *ngIf="!loading && !error">
+    <app-product-card *ngFor="let p of exploreProducts" [product]="p"></app-product-card>
+  </div>
+
+  <p *ngIf="!loading && searchTerm && exploreProducts.length === 0">No products matched your search.</p>
+</section>
+
+<ng-template #skeleton>
+  <div class="grid grid-4">
+    <div class="skeleton-card" *ngFor="let i of [1,2,3,4]"></div>
+  </div>
+</ng-template>
+
+<section class="container services">
+  <div class="service"><span>🚚</span><h4>FREE AND FAST DELIVERY</h4><p>Free delivery for all orders over $140</p></div>
+  <div class="service"><span>🎧</span><h4>24/7 CUSTOMER SERVICE</h4><p>Friendly 24/7 customer support</p></div>
+  <div class="service"><span>🛡️</span><h4>MONEY BACK GUARANTEE</h4><p>We reurn money within 30 days</p></div>
+</section>

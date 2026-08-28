@@ -1,0 +1,266 @@
+
+<!-- Top Bar -->
+<div class="bg-dark text-white">
+  <div class="container py-2 position-relative text-center">
+
+    <span class="small">
+      Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+
+      <a
+        href="#"
+        class="text-white fw-semibold text-decoration-underline ms-1"
+      >
+        ShopNow
+      </a>
+    </span>
+
+    <!-- <span class="position-absolute end-0 me-3 small">
+      English ▾
+    </span> -->
+
+  </div>
+</div>
+
+
+<!-- Main Header -->
+<header class="border-bottom py-3">
+
+  <div class="container">
+
+    <div class="d-flex align-items-center justify-content-between">
+
+      <!-- Logo -->
+      <a
+        routerLink="/"
+        class="text-decoration-none text-dark fs-4 fw-bold"
+      >
+        Mo E-Commerce
+      </a>
+
+
+      <!-- Desktop Navigation -->
+      <nav class="d-none d-lg-flex align-items-center gap-4">
+
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="text-dark text-decoration-none"
+        >
+          Home
+        </a>
+
+        <a
+          routerLink="/contact"
+          routerLinkActive="active"
+          class="text-dark text-decoration-none"
+        >
+          Contact
+        </a>
+
+        <a
+          routerLink="/about"
+          routerLinkActive="active"
+          class="text-dark text-decoration-none"
+        >
+          About
+        </a>
+
+        <a
+          routerLink="/signup"
+          routerLinkActive="active"
+          class="text-dark text-decoration-none"
+        >
+          Sign Up
+        </a>
+
+      </nav>
+
+
+      <!-- Header Actions -->
+      <div class="d-flex align-items-center gap-3">
+
+        <!-- Search -->
+        <div class="input-group bg-light rounded overflow-hidden d-none d-md-flex">
+
+          <input
+            type="text"
+            class="form-control border-0 bg-light shadow-none"
+            placeholder="What are you looking for?"
+            [(ngModel)]="searchTerm"
+            (keyup.enter)="onSearch()"
+          />
+
+          <button
+            class="btn bg-light border-0"
+            type="button"
+            (click)="onSearch()"
+            aria-label="Search"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+        </div>
+
+
+        <!-- Wishlist -->
+        <a
+          routerLink="/wishlist"
+          class="position-relative text-dark fs-5 text-decoration-none"
+        >
+
+          <i class="fa-regular fa-heart"></i>
+
+          <span
+            *ngIf="wishlistCount > 0"
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          >
+            {{ wishlistCount }}
+          </span>
+
+        </a>
+
+
+        <!-- Cart -->
+        <a
+          routerLink="/cart"
+          class="position-relative text-dark fs-5 text-decoration-none"
+        >
+
+          <i class="fa-solid fa-cart-shopping"></i>
+
+          <span
+            *ngIf="cartCount > 0"
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          >
+            {{ cartCount }}
+          </span>
+
+        </a>
+
+
+        <!-- Account -->
+        <div class="dropdown d-none d-md-block">
+
+          <button
+            class="btn btn-danger rounded-circle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            aria-label="Account"
+          >
+            <i class="fa-solid fa-user"></i>
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end">
+
+            <li>
+              <a class="dropdown-item" routerLink="/account">
+                Manage My Account
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" routerLink="/account">
+                My Order
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" routerLink="/account">
+                My Cancellations
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" routerLink="/account">
+                My Reviews
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item" routerLink="/login">
+                Logout
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- Toggle Button -->
+        <button
+          class="btn btn-outline-dark d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mobileMenu"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Mobile Menu -->
+    <div class="collapse d-lg-none mt-3" id="mobileMenu">
+
+      <nav class="d-flex flex-column gap-2 border-top pt-3">
+
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="text-dark text-decoration-none py-2"
+        >
+          Home
+        </a>
+
+        <a
+          routerLink="/contact"
+          routerLinkActive="active"
+          class="text-dark text-decoration-none py-2"
+        >
+          Contact
+        </a>
+
+        <a
+          routerLink="/about"
+          routerLinkActive="active"
+          class="text-dark text-decoration-none py-2"
+        >
+          About
+        </a>
+
+        <a
+          routerLink="/signup"
+          routerLinkActive="active"
+          class="text-dark text-decoration-none py-2"
+        >
+          Sign Up
+        </a>
+
+        <a
+          routerLink="/account"
+          class="text-dark text-decoration-none py-2"
+        >
+          <i class="fa-solid fa-user me-2"></i>
+          My Account
+        </a>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+</header>

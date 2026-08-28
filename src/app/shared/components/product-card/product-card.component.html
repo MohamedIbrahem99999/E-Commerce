@@ -1,0 +1,13 @@
+<a class="product-card" [routerLink]="['/product', product.id]">
+  <div class="thumb">
+    <img [src]="product.image" [alt]="product.title" />
+    <button class="wish-btn" [class.active]="inWishlist" (click)="toggleWishlist($event)">♥</button>
+    <button class="add-cart-btn" (click)="addToCart($event)">Add To Cart</button>
+  </div>
+  <h4 class="title">{{ product.title }}</h4>
+  <div class="price">${{ product.price }}</div>
+  <div class="rating">
+    <span>★★★★☆</span>
+    <span class="count">({{ product.rating.count }})</span>
+  </div>
+</a>

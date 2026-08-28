@@ -1,0 +1,26 @@
+<div class="container auth-layout">
+  <div class="auth-image">
+    <div class="graphic">🛒📱🛍️</div>
+  </div>
+
+  <div class="auth-form">
+    <h1>Create an account</h1>
+    <p>Enter your details below</p>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <input class="form-control" placeholder="Name" formControlName="name" />
+      <div class="err" *ngIf="submitted && form.get('name')?.invalid">Name is required</div>
+
+      <input class="form-control" placeholder="Email or Phone Number" formControlName="identifier" />
+      <div class="err" *ngIf="submitted && form.get('identifier')?.invalid">This field is required</div>
+
+      <input class="form-control" type="password" placeholder="Password" formControlName="password" />
+      <div class="err" *ngIf="submitted && form.get('password')?.invalid">Minimum 6 characters</div>
+
+      <button class="btn btn-primary full" type="submit">Create Account</button>
+      <button class="btn btn-outline full" type="button">🔴 Sign up with Google</button>
+    </form>
+
+    <p class="switch">Already have account? <a routerLink="/login">Log in</a></p>
+  </div>
+</div>

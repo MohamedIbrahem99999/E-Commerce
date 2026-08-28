@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="breadcrumb">
+    <a routerLink="/">Account</a> / <span *ngIf="product">{{ product.category }}</span> /
+    <span class="current" *ngIf="product">{{ product.title }}</span>
+  </div>
+
+  <div *ngIf="loading">Loading product...</div>
+
+  <div class="details-grid" *ngIf="!loading && product">
+    <div class="image-panel">
+      <img [src]="product.image" [alt]="product.title" />
+    </div>
+
+    <div class="info-panel">
+      <h1>{{ product.title }}</h1>
+      <div class="rating-row">
+        <span class="stars">★★★★☆</span>
+        <span class="count">({{ product.rating.count }} Reviews)</span>
+        <span class="stock">In Stock</span>
+      </div>
+      <div class="price">${{ product.price.toFixed(2) }}</div>
+      <p class="description">{{ product.description }}</p>
+
+      <div class="qty-row">
+        <div class="qty-control">
+          <button (click)="decrease()">−</button>
+          <span>{{ quantity }}</span>
+          <button (click)="increase()">+</button>
+        </div>
+        <button class="btn btn-primary" (click)="addToCart()">Buy Now</button>
+        <button class="wish-toggle" [class.active]="inWishlist" (click)="toggleWishlist()">♥</button>
+      </div>
+
+      <div class="delivery-info">
+        <div><strong>Free Delivery</strong><p>Enter your postal code for delivery availability</p></div>
+        <div><strong>Return Delivery</strong><p>Free 30 days delivery returns. <a href="#">Details</a></p></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="related" *ngIf="related.length">
+    <div class="section-title"><span class="bar"></span><span>Related Item</span></div>
+    <div class="grid grid-4">
+      <app-product-card *ngFor="let p of related" [product]="p"></app-product-card>
+    </div>
+  </section>
+</div>

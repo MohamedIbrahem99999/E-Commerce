@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="breadcrumb"><a routerLink="/">Home</a> / <span class="current">Contact</span></div>
+
+  <div class="contact-grid">
+    <div class="info-card">
+      <div class="info-block">
+        <div class="icon">📞</div>
+        <h4>Call To Us</h4>
+        <p>We are available 24/7, 7 days a week.</p>
+        <p>Phone: +20 102 089 7534</p>
+      </div>
+      <hr />
+      <div class="info-block">
+        <div class="icon">✉️</div>
+        <h4>Write To US</h4>
+        <p>Fill out our form and we will contact you within 24 hours.</p>
+        <p>Emails: customer&#64;exclusive.com</p>
+        <p>Emails: support&#64;exclusive.com</p>
+      </div>
+    </div>
+
+    <form class="contact-form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row-3">
+        <input class="form-control-box" placeholder="Your Name *" formControlName="name" />
+        <input class="form-control-box" placeholder="Your Email *" formControlName="email" />
+        <input class="form-control-box" placeholder="Your Phone *" formControlName="phone" />
+      </div>
+      <textarea class="form-control-box" rows="8" placeholder="Your Message" formControlName="message"></textarea>
+      <button class="btn btn-primary" type="submit">Send Message</button>
+      <p class="sent-msg" *ngIf="sent">Your message has been sent successfully!</p>
+    </form>
+  </div>
+</div>

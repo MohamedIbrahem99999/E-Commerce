@@ -1,0 +1,146 @@
+<footer class="bg-dark text-white mt-5 pt-5">
+  <div class="container">
+    <div class="row g-4 pb-5">
+      <!-- Exclusive -->
+      <div class="col-12 col-sm-6 col-lg">
+        <h3 class="fs-4 fw-bold mb-3">Exclusive</h3>
+
+        <h4 class="fs-6 fw-semibold mb-3">Subscribe</h4>
+
+        <p class="text-light mb-2">Get 10% off your first order</p>
+
+        <form class="input-group mt-3" (submit)="$event.preventDefault()">
+          <input
+            type="email"
+            class="form-control bg-dark text-white border-white shadow-none"
+            placeholder="Enter your email"
+          />
+
+          <button
+            type="submit"
+            class="btn btn-dark border border-white text-white"
+          >
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Support -->
+      <div class="col-12 col-sm-6 col-lg">
+        <h4 class="fs-6 fw-semibold mb-4">Support</h4>
+
+        <p class="text-light mb-2">Cairo, Egypt</p>
+
+        <p class="text-light mb-2">moibrahem.aboelenen&#64;gmail.com</p>
+
+        <p class="text-light mb-2">+20 102 089 7534</p>
+      </div>
+
+      <!-- Account -->
+      <div class="col-6 col-sm-6 col-lg">
+        <h4 class="fs-6 fw-semibold mb-4">Account</h4>
+
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <a routerLink="/account" class="text-light text-decoration-none">
+              My Account
+            </a>
+          </li>
+
+          <li class="mb-3">
+            <a routerLink="/login" class="text-light text-decoration-none">
+              Login / Register
+            </a>
+          </li>
+
+          <li class="mb-3">
+            <a routerLink="/cart" class="text-light text-decoration-none">
+              Cart
+            </a>
+          </li>
+
+          <li class="mb-3">
+            <a routerLink="/wishlist" class="text-light text-decoration-none">
+              Wishlist
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/" class="text-light text-decoration-none"> Shop </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quick Link -->
+      <div class="col-6 col-sm-6 col-lg">
+        <h4 class="fs-6 fw-semibold mb-4">Quick Link</h4>
+
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <a href="#" class="text-light text-decoration-none">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li class="mb-3">
+            <a href="#" class="text-light text-decoration-none">
+              Terms Of Use
+            </a>
+          </li>
+
+          <li class="mb-3">
+            <a href="#" class="text-light text-decoration-none"> FAQ </a>
+          </li>
+
+          <li>
+            <a routerLink="/contact" class="text-light text-decoration-none">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg">
+        <div class="d-flex gap-3">
+          <a
+            href="https://www.facebook.com/share/14mg7CAjHxm/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white fs-5"
+          >
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <!-- <a href="#" class="text-white fs-5">
+            <i class="fa-brands fa-twitter"></i>
+          </a> -->
+
+          <a
+            href="https://www.instagram.com/mohamedibrahem2050?igsi=NTkxcG1pNDczeWs2&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white fs-5"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/mohamed-ibrahem-375a4835b"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white fs-5"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-top border-secondary text-center py-3">
+      <p class="text-secondary small mb-0">
+        © Mohamed Ibrahem {{ year }}. All rights reserved
+      </p>
+    </div>
+  </div>
+</footer>

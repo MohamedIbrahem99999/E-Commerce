@@ -1,0 +1,66 @@
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 0;
+  p { margin-bottom: 20px; color: var(--color-gray); }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.wish-card {
+  .thumb {
+    position: relative;
+    background: var(--color-light-gray);
+    border-radius: 4px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+
+    img { max-height: 150px; object-fit: contain; }
+  }
+
+  .del-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--color-white);
+    border: none;
+  }
+
+  .add-cart-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  h4 { font-size: 14px; margin: 0 0 6px; }
+  .price { color: var(--color-primary); font-weight: 600; }
+}
+
+.suggestions { padding-top: 20px; }
+
+@media (max-width: 992px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
