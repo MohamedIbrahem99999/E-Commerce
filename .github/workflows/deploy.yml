@@ -1,4 +1,4 @@
-```yaml
+
 name: Deploy Angular to GitHub Pages
 
 on:
@@ -42,4 +42,4 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-```
+
